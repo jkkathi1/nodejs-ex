@@ -124,7 +124,7 @@ console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
 
-
+/*
 const http = require('http')
 const url = require('url')
 const client = require('prom-client')
@@ -159,3 +159,4 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
+*/
