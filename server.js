@@ -126,10 +126,11 @@ module.exports = app ;
 
 
 // Commenting
-/*
+
 const http = require('http')
 const url = require('url')
-const client = require('prom-client')
+//const client = require('prom-client')
+const client = require('prometheus-client')
 // Create a Registry which registers the metrics
 const register = new client.Registry()
 // Add a default label which is added to all metrics
@@ -161,4 +162,3 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
-*/
