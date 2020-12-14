@@ -127,21 +127,21 @@ module.exports = app ;
 
 
 // Commenting
-/*
+
 const http = require('http')
 const url = require('url')
 //const Prometheus = require('prom-client')
 const Prometheus = require('prom-client')
 // Create a Registry which registers the metrics
-const register = new client.Registry()
+const register = new Prometheus.Registry()
 // Add a default label which is added to all metrics
 register.setDefaultLabels({
   app: 'nodejs-ex'
 })
 // Enable the collection of default metrics
-client.collectDefaultMetrics({ register })
+Prometheus.collectDefaultMetrics({ register })
 // Create a histogram metric
-const httpRequestDurationMicroseconds = new client.Histogram({
+const httpRequestDurationMicroseconds = new Prometheus.Histogram({
   name: 'http_request_duration_seconds',
   help: 'Duration of HTTP requests in microseconds',
   labelNames: ['method', 'route', 'code'],
@@ -163,11 +163,11 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
-*/
 
 
 
-// Init
+
+/*// Init
 const Prometheus = require('prom-client')
 const httpRequestDurationMicroseconds = new Prometheus.Histogram({
 //  name: 'http_request_duration_ms',
@@ -195,3 +195,4 @@ app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
 });
+*/
