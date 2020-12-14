@@ -170,13 +170,21 @@ const server = http.createServer(async (req, res) => {
 // Init
 const Prometheus = require('prom-client')
 const httpRequestDurationMicroseconds = new Prometheus.Histogram({
-  name: 'http_request_duration_ms',
-  help: 'Duration of HTTP requests in ms',
-  labelNames: ['route'],
+//  name: 'http_request_duration_ms',
+  //help: 'Duration of HTTP requests in ms',
+  //labelNames: ['route'],
   // buckets for response time from 0.1ms to 500ms
-  buckets: [0.10, 5, 15, 50, 100, 200, 300, 400, 500]
-})
+  //buckets: [0.10, 5, 15, 50, 100, 200, 300, 400, 500]
+//});
 
+
+// Create a histogram metric
+//const httpRequestDurationMicroseconds = new client.Histogram({
+  name: 'http_request_duration_seconds',
+  help: 'Duration of HTTP requests in microseconds',
+  labelNames: ['method', 'route', 'code'],
+  buckets: [0.1, 0.3, 0.5, 0.7, 1, 3, 5, 7, 10]
+});
 // After each response
 httpRequestDurationMicroseconds
   .labels(req.route.path)
@@ -186,4 +194,4 @@ httpRequestDurationMicroseconds
 app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
-})
+});
