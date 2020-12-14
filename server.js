@@ -165,6 +165,7 @@ const server = http.createServer(async (req, res) => {
 })
 */
 
+/*
 // Init
 const Prometheus = require('prom-client')
 const httpRequestDurationMicroseconds = new Prometheus.Histogram({
@@ -185,3 +186,4 @@ app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
 })
+*/
