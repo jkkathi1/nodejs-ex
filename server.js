@@ -127,7 +127,7 @@ module.exports = app ;
 
 
 // Commenting
-
+/*
 const http = require('http')
 const url = require('url')
 //const Prometheus = require('prom-client')
@@ -163,10 +163,10 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
+*/
 
 
 
-/*
 // Init
 const Prometheus = require('prom-client')
 const httpRequestDurationMicroseconds = new Prometheus.Histogram({
@@ -187,4 +187,3 @@ app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
 })
-*/
