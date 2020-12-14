@@ -127,11 +127,11 @@ module.exports = app ;
 
 
 // Commenting
-/*
+
 const http = require('http')
 const url = require('url')
-const Prometheus = require('prom-client')
-//const client = require('prometheus/client')
+//const Prometheus = require('prom-client')
+const client = require('prom-client')
 // Create a Registry which registers the metrics
 const register = new client.Registry()
 // Add a default label which is added to all metrics
@@ -163,9 +163,10 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
-*/
 
 
+
+/*
 // Init
 const Prometheus = require('prom-client')
 const httpRequestDurationMicroseconds = new Prometheus.Histogram({
@@ -186,3 +187,4 @@ app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
 })
+*/
