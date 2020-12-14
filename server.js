@@ -1,4 +1,5 @@
 //  OpenShift sample Node application
+/*
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
@@ -123,13 +124,13 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
-
+*/
 
 // Commenting
-
+/*
 const http = require('http')
 const url = require('url')
-//const client = require('prom-client')
+const Prometheus = require('prom-client')
 //const client = require('prometheus/client')
 // Create a Registry which registers the metrics
 const register = new client.Registry()
@@ -162,3 +163,4 @@ const server = http.createServer(async (req, res) => {
   // End timer and add labels
   end({ route, code: res.statusCode, method: req.method })
 })
+*/
