@@ -131,7 +131,7 @@ module.exports = app ;
 const http = require('http')
 const url = require('url')
 //const Prometheus = require('prom-client')
-const client = require('prom-client')
+const Prometheus = require('prom-client')
 // Create a Registry which registers the metrics
 const register = new client.Registry()
 // Add a default label which is added to all metrics
