@@ -1,5 +1,5 @@
 //  OpenShift sample Node application
-/*
+
 var express = require('express'),
     app     = express(),
     morgan  = require('morgan');
@@ -124,7 +124,7 @@ app.listen(port, ip);
 console.log('Server running on http://%s:%s', ip, port);
 
 module.exports = app ;
-*/
+
 
 // Commenting
 /*
